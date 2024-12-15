@@ -31,7 +31,7 @@ import base64, chardet
 path = str(sys.argv[-1])
 
 #Number of statements to analyse for
-number = 4
+number = '4'
 
 #Open API Key from env variables
 api_key = os.environ["AIPROXY_TOKEN"]
