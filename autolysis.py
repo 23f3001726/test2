@@ -119,7 +119,7 @@ def graph(statement):
 #Get analysis code with graph
 def analyse_graph(details, statement, graph, filename):
     message = [
-                {"role": "system", "content": "You are an expert of data analysis, data visualisation. Give me code(No extra text) for analysis statement over given file. Code must be error-free with proper exception handling(atleat print error). Don't use deprecated/to be deprecated methods. Use " + graph + " for visualisation using seaborn(enhance with titles, axis labels, legends, colors, annotations, and enhanced customization). Choose data points judiciously, for visualisation(there might be too much data points on graph, making it cluttered and un-readable)."},
+                {"role": "system", "content": "You are an expert of data analysis, data visualisation. Give me code(No extra text) for analysis statement over given file. Code must be error-free with proper exception handling(atleat print error). Don't use outdated methods. Use " + graph + " for visualisation using seaborn(enhance with titles, axis labels, legends, colors, annotations, and enhanced customization). Choose data points judiciously, for visualisation(there might be too much data points on graph, making it cluttered and un-readable)."},
                 {"role": "user", "content": "File Details are: " + details +
                  "Analysis Statement: " + statement +"Save the graph with name "+ filename + ". Make sure that graph is clutter-free and human readable."}
             ]
@@ -128,7 +128,7 @@ def analyse_graph(details, statement, graph, filename):
 #Get analysis code without graph
 def analyse(details, statement):
     message = [
-                {"role": "system", "content": "You are an expert of data analysis. Give me code(No extra text) for analysis statement over given file. Give me code(No extra text) for analysis statement over given file. Code must be error-free with proper exception handling(atleat print error). Don't use deprecated/to be deprecated methods. Code should store concluding remarks into a varialble 'conclusion' and return it."},
+                {"role": "system", "content": "You are an expert of data analysis. Give me code(No extra text) for analysis statement over given file. Give me code(No extra text) for analysis statement over given file. Code must be error-free with proper exception handling(atleat print error). Don't use outdated methods. Code should store concluding remarks into a varialble 'conclusion' and return it."},
                 {"role": "user", "content": "File Details are: " + details +
                  "Analysis Statement: " + statement + "."}
             ]
@@ -165,7 +165,7 @@ def summarise_graph(details, statement, base64_image):
 
 #Data Cleaning and Data Details
 message = [
-            {"role": "system", "content": "You are an expert data analyst. Write error-free python code(with error handling , atleast print error to terminal) for cleaning data of a csv file. Don't use deprecated/ to be deprrecated methods. Do appropriate replacement for missing values and inappropriate cell values. Save the file with its original name. Only code no other text" },
+            {"role": "system", "content": "You are an expert data analyst. Write error-free python code(with error handling , atleast print error to terminal) for cleaning data of a csv file. Don't use outdated methods. Do appropriate replacement for missing values and inappropriate cell values. Save the file with its original name. Only code no other text" },
             {"role": "user", "content": file_details(path) + "."}
         ]
 try:
