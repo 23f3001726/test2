@@ -165,7 +165,7 @@ def summarise_graph(details, statement, base64_image):
 
 #Data Cleaning and Data Details
 message = [
-            {"role": "system", "content": "You are an expert data analyst. Write error-free python code(with error handling , atleast print error to terminal) for cleaning data of a csv file. Don't use deprecated/ to be deprrecated methods. Do appropriate replacement for missing values and inappropriate cell values. Save the file with original name. Only code no other text" },
+            {"role": "system", "content": "You are an expert data analyst. Write error-free python code(with error handling , atleast print error to terminal) for cleaning data of a csv file. Don't use deprecated/ to be deprrecated methods. Do appropriate replacement for missing values and inappropriate cell values. Save the file with its original name. Only code no other text" },
             {"role": "user", "content": file_details(path) + "."}
         ]
 try:
