@@ -257,7 +257,7 @@ for i in range(len(statements)):
 
 #Making a story and saving it to README.md
 message = [
-            {"role": "system", "content": "You are a phenomenol storyteller. Give me just the story without any extra text. Don't forget to add png images into the story" + '''
+            {"role": "system", "content": "You are a phenomenol storyteller. Give me just the summary story( a descriptive one ) without any extra text. Ignore the statement part which says 'Something Went Wrong' completely. Don't forget to add png images into the story" + '''
             Describe(as a story):
             The data you received, briefly.
             The analysis you carried out.
@@ -265,7 +265,7 @@ message = [
             The implications of your findings (i.e. what to do with the insights).
             '''},
             {"role": "user", "content": "I have analysed a file" +  '''
-            I want you to restructure and summarise my analysis of the file, as a story, in markdown format, with embedded png images given in analysis (they will be in root folder only)
+            I want you to restructure and summarise my analysis of the file, as an interesting story, in markdown format, with embedded png images given in analysis (they will be in root folder only)
             '''+ "Analysis of the file:- Basic Analysis: " + details + ", Further Analysis: " + readme + ". Skip the entire section of a statement , if something went wrong."}
         ]
 
