@@ -207,7 +207,7 @@ for i in range(len(statements)):
       if conclusion == '': #if conclusion is empty
         print("Something Went Wrong: Conclusion is Empty") #log to console
         #adding error message (later handled in final summary)
-        readme += "Something went wrong. Skip this entire section(including analysis statement) in summary.\n"
+        readme += "Instruction : Something went wrong. Skip this entire section(including analysis statement) in summary.\n"
 
     try:
       if not (conclusion == ''): #if conclusion isn't empty
@@ -218,7 +218,7 @@ for i in range(len(statements)):
       print('Summary Generation Error:', e) #log error to console
       print("Something Went Wrong in summary generation") #log to console
       #adding error message (later handled in final summary)
-      readme += "Something went wrong. Skip this entire section(including analysis statement) in summary.\n"
+      readme += "Instruction : Something went wrong. Skip this entire section(including analysis statement) in summary.\n"
 
   else: #If Graph is required
     print("With Graph") #log to console
@@ -251,13 +251,13 @@ for i in range(len(statements)):
     except Exception as e:
       print('Summary Generation Error:', e) #log error to console
       #adding error message (later handled in final summary)
-      readme += "Something went wrong. Skip this entire section(including analysis statement and png image) in summary.\n"
+      readme += "Instruction : Something went wrong. Skip this entire section(including analysis statement and png image) in summary.\n"
       print("Something went wrong in summary generation") #log to console
 
 
 #Making a story and saving it to README.md
 message = [
-            {"role": "system", "content": "You are a phenomenol storyteller. Give me just the summary story( a descriptive one ) without any extra text. Ignore the statement part which says 'Something Went Wrong' completely. Don't forget to add png images into the story" + '''
+            {"role": "system", "content": "You are a phenomenol storyteller. Give me just the summary story( a descriptive one ) without any extra text. Ignore the statement part which says 'Something Went Wrong' completely. Don't forget to add png images into the story. You must follow instructions in Further Analysis" + '''
             Describe(as a story):
             The data you received, briefly.
             The analysis you carried out.
