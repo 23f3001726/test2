@@ -52,7 +52,12 @@ def chatgpt(message):
         if response.status_code == 200:
             try:
                 # Parse the response JSON and return the model's message content
-                return (response.json()["choices"][0]["message"]["content"])
+                resp = (response.json()["choices"][0]["message"]["content"])
+                if resp is not None: #Check for None response
+                    return resp
+
+                else:
+                    print("None Response")
 
             except Exception as e:
                 print(f"Error parsing JSON response: {str(e)}")
