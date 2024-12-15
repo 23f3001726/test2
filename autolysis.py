@@ -119,7 +119,7 @@ def graph(statement):
 #Get analysis code with graph
 def analyse_graph(details, statement, graph, filename):
     message = [
-                {"role": "system", "content": "You are an expert of data analysis, data visualisation. Give me code(No extra text) for analysis statement over given file. Code must be error-free with proper exception handling(atleat print error). Don't use outdated methods. Use " + graph + " for visualisation using seaborn(enhance with titles, axis labels, legends, colors, annotations, and enhanced customization). Choose data points judiciously, for visualisation(there might be too much data points on graph, making it cluttered and un-readable)."},
+                {"role": "system", "content": "You are an expert of data analysis, data visualisation. Give me code(No extra text) for analysis statement over given file. Code must be error-free with proper exception handling(atleat print error). Don't use outdated methods. Use " + graph + " for visualisation using seaborn(enhance with titles, axis labels, legends, colors, annotations, and other appropriate customization). Choose data points judiciously, for visualisation(there might be too much data points on graph, making it cluttered and un-readable)."},
                 {"role": "user", "content": "File Details are: " + details +
                  "Analysis Statement: " + statement +"Save the graph with name "+ filename + ". Make sure that graph is clutter-free and human readable."}
             ]
