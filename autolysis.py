@@ -30,6 +30,8 @@ import base64, chardet
 #Path of csv file
 path = str(sys.argv[-1])
 
+#Number of statements to analyse for
+number = 4
 
 #Open API Key from env variables
 api_key = os.environ["AIPROXY_TOKEN"]
@@ -177,7 +179,7 @@ details = file_details(path)
 
 #Getting problem statements into a list
 message = [
-            {"role": "system", "content": "You are an expert data analyst. Give me best 3 problem statements to analyse for, on the file. Just give a paragraph containing one line each for those statements, seperated by \"|\" without numbering."+ "Here are some probable areas to analyse for(but don't just copy them , use your wit):- Outlier and Anomaly Detection(You might find errors, fraud, or high-impact opportunities), Correlation Analysis, Regression Analysis, and Feature Importance Analysis(You might find what to improve to impact an outcome), Time Series Analysis(You might find patterns that help predict the future), Cluster Analysis(You might find natural groupings for targeted marketing or resource allocation), Network Analysis(You might find what to cross-sell or collaborate with)"},
+            {"role": "system", "content": "You are an expert data analyst. Give me best" + number + "problem statements to analyse for, on the file. Just give a paragraph containing one line each for those statements, seperated by \"|\" without numbering."+ "Here are some probable areas to analyse for(but don't just copy them , use your wit):- Outlier and Anomaly Detection(You might find errors, fraud, or high-impact opportunities), Correlation Analysis, Regression Analysis, and Feature Importance Analysis(You might find what to improve to impact an outcome), Time Series Analysis(You might find patterns that help predict the future), Cluster Analysis(You might find natural groupings for targeted marketing or resource allocation), Network Analysis(You might find what to cross-sell or collaborate with)"},
             {"role": "user", "content": "File Details are: " + details + ". Give me statements that give me best and useful insights."}
         ]
 statements = chatgpt(message).split("|")
