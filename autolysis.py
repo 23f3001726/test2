@@ -266,7 +266,7 @@ message = [
             '''},
             {"role": "user", "content": "I have analysed a file" +  '''
             I want you to restructure and summarise my analysis of the file, as a story, in markdown format, with embedded png images given in analysis (they will be in root folder only)
-            '''+ "Analysis of the file:- Basic Analysis: " + details + ", Further Analysis: " + readme }
+            '''+ "Analysis of the file:- Basic Analysis: " + details + ", Further Analysis: " + readme + ". Skip the entire section of a statement , if something went wrong."}
         ]
 
 # Open the README.mkd file in write mode
