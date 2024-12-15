@@ -137,7 +137,7 @@ def analyse(details, statement):
 #Get summary for analysis(without graph)
 def summarise(details, statement, conclusion):
     message = [
-                {"role": "system", "content": "You are an expert of data analysis and summarising. Summarise for given problem statement on file with details: " + details + ". Give me summary only, without any extra text"},
+                {"role": "system", "content": "You are an expert of data analysis and summarising. Summarise for given problem statement on file with details: " + details + ". Give me summary(descriptive and detailed) only, without any extra text"},
                 {"role": "user", "content": "Problem Statement: " + statement +
                  "Analysis Conclusion: " + conclusion }
             ]
@@ -146,7 +146,7 @@ def summarise(details, statement, conclusion):
 #Get summary for analysis(with graph)
 def summarise_graph(details, statement, base64_image):
     message = [
-                {"role": "system", "content": "You are an expert of summarising and analysisng different types of graphs. Summarise the graph for problem statement on file with details: " + details + ". Give me summary only, without any extra text"},
+                {"role": "system", "content": "You are an expert of summarising and analysisng different types of graphs. Summarise the graph for problem statement on file with details: " + details + ". Give me summary(descriptive and detailed) only, without any extra text"},
                 {"role": "user", "content": [
                     {
                         "type": "image_url",
@@ -257,7 +257,7 @@ for i in range(len(statements)):
 
 #Making a story and saving it to README.md
 message = [
-            {"role": "system", "content": "You are a phenomenol storyteller. Give me just the summary story( a descriptive one ) without any extra text. Ignore the statement part which says 'Something Went Wrong' completely. Don't forget to add png images into the story. You must follow instructions in Further Analysis" + '''
+            {"role": "system", "content": "You are a phenomenol storyteller. Give me just the summary story( detailed and descriptive one ) without any extra text. Ignore the statement part which says 'Something Went Wrong' completely. Don't forget to add png images into the story. You must follow instructions in Further Analysis" + '''
             Describe(as a story):
             The data you received, briefly.
             The analysis you carried out.
