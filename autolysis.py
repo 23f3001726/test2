@@ -40,7 +40,7 @@ def chatgpt(message):
     try:
         # Make the POST request to the OpenAI API
         response = requests.post(
-            "http://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
+            "https://api.openai.com/v1/chat/completions",
             headers={"Authorization": f"Bearer {api_key}"},
             json={
                 "model": "gpt-4o-mini",
